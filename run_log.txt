@@ -1,6 +1,6 @@
-17:36 7/13/2025
+12:20 7/14/2025
 
-PS C:\Projects\Data_Pipeline_Mini_Project> & C:/ProgramData/anaconda3/python.exe c:/Projects/Data_Pipeline_Mini_Project/event_ticket_system.py
+May we recommend the past months' top-selling events:
 - Washington Spirits vs Sky Blue FC (5 tickets sold)
 - Christmas Spectacular (5 tickets sold)
 - The North American International Auto Show (4 tickets sold)
