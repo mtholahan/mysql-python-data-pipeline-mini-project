@@ -2,20 +2,20 @@
 
 
 ## 📖 Abstract
-This project develops a basic data pipeline for an event ticketing system, integrating CSV-based vendor feeds with a relational database. The system simulates how major ticket platforms manage direct ticket sales alongside third-party reseller submissions.
-
-The workflow includes:
-
-* Designing and creating a sales table in MySQL with fields for ticket, customer, event, and purchase details.
-
-* Using Python’s MySQL connector to establish database connections and ingest new sales records from daily CSV submissions.
-
-* Implementing a loader function to iterate through CSV rows and insert them into the database table.
-
-* Running SQL queries to generate statistical insights, such as identifying the most popular events in the past month based on ticket volume.
-
-* Formatting query results into human-readable output, e.g., "The North American International Auto Show" as a top-selling event.
-
+This project develops a basic data pipeline for an event ticketing system, integrating CSV-based vendor feeds with a relational database. The system simulates how major ticket platforms manage direct ticket sales alongside third-party reseller submissions.
+
+The workflow includes:
+
+* Designing and creating a sales table in MySQL with fields for ticket, customer, event, and purchase details.
+
+* Using Python’s MySQL connector to establish database connections and ingest new sales records from daily CSV submissions.
+
+* Implementing a loader function to iterate through CSV rows and insert them into the database table.
+
+* Running SQL queries to generate statistical insights, such as identifying the most popular events in the past month based on ticket volume.
+
+* Formatting query results into human-readable output, e.g., "The North American International Auto Show" as a top-selling event.
+
 Deliverables include Python code, the sales table definition, ingestion logic, and example query results. Through this project, I gained practice in Python-MySQL integration, database schema creation, batch CSV ingestion, and SQL-based analytics, building foundational ETL pipeline skills.
 
 
@@ -106,4 +106,4 @@ Screenshot of ETL pipeline executing
 
 
 
-*Generated automatically via Python + Jinja2 + SQL Server table `tblMiniProjectProgress` on 09-15-2025 00:58:09*
+*Generated automatically via Python + Jinja2 + SQL Server table `tblMiniProjectProgress` on 09-15-2025 18:04:14*
