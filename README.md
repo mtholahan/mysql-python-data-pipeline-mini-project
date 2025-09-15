@@ -1,91 +1,109 @@
-# 🎟️ Event Ticket System – Data Pipeline Mini-Project
-
-This project simulates a real-world ticketing system that processes third-party ticket sales via CSV. The goal is to practice using Python and SQL to build a simple but complete data pipeline using MySQL.
-
-## 📁 Project Structure
-
-```
-.
-├── create_ticketsales_table.sql    # Create table DDL
-├── event_ticket_system.py          # Main script with all 3 pipeline steps
-├── README.md
-├── run_log.txt                     # Saved CLI output from a successful run
-├── third_party_sales_1.csv         # Input CSV file with sales data
+# MySQL Python Data Pipeline Mini Project
 
 
-## 🚀 How to Run This Project
+## 📖 Abstract
+This project develops a basic data pipeline for an event ticketing system, integrating CSV-based vendor feeds with a relational database. The system simulates how major ticket platforms manage direct ticket sales alongside third-party reseller submissions.
 
-### 🔧 1. Prerequisites
+The workflow includes:
 
-- Python 3.x
-- MySQL Server (running locally)
-- MySQL user with access to a schema called `event_ticket_system`
-- `mysql-connector-python` package:
+* Designing and creating a sales table in MySQL with fields for ticket, customer, event, and purchase details.
 
-```bash
-pip install mysql-connector-python
-```
+* Using Python’s MySQL connector to establish database connections and ingest new sales records from daily CSV submissions.
 
-### 🛠️ 2. Set Up the MySQL Table (see third_party_sales_1.csv)
+* Implementing a loader function to iterate through CSV rows and insert them into the database table.
 
-Connect to MySQL and run:
+* Running SQL queries to generate statistical insights, such as identifying the most popular events in the past month based on ticket volume.
 
-```sql
-USE event_ticket_system;
+* Formatting query results into human-readable output, e.g., "The North American International Auto Show" as a top-selling event.
 
-CREATE TABLE IF NOT EXISTS ticketsales (
-    ticket_id int,
-    trans_date date,
-    event_id int,
-    event_name varchar(50),
-    event_date date,
-    event_type varchar(10),
-    event_city varchar(20),
-    customer_id int,
-    price decimal,
-    num_tickets int
-);
-```
+Deliverables include Python code, the sales table definition, ingestion logic, and example query results. Through this project, I gained practice in Python-MySQL integration, database schema creation, batch CSV ingestion, and SQL-based analytics, building foundational ETL pipeline skills.
 
-### 🐍 3. Run the Python Pipeline
 
-Make sure to update your MySQL credentials in `get_db_connection()` inside the script.
 
-```bash
-python event_ticket_system.py
-```
+## 🛠 Requirements
+- Python 3.8+
+- MySQL Server running locally or remote
+- mysql-connector-python package
+- Provided ticket_sales.csv dataset
+- GitHub repo for code + logs submission
 
-## ⚙️ What the Script Does
 
-1. **Connects to the MySQL database** using the provided credentials.
-2. **Reads a third-party CSV file** and parses the `trans_date` and `event_date` values into proper `DATE` objects.
-3. **Inserts all records** into the `ticketsales` table.
-4. **Queries and prints the top 5 most popular events** by total ticket sales.
 
-## ✅ Sample Output
+## 🧰 Setup
+- Install mysql-connector-python (pip install mysql-connector-python)
+- Create a MySQL database (e.g., ticketdb)
+- Define and create sales table per schema in rubric
+- Place provided CSV (ticket_sales.csv) in project folder
 
-```
-Most Popular Events:
-- Rock Concert (120 tickets sold)
-- Auto Show (80 tickets sold)
-- Jazz Festival (75 tickets sold)
-...
-```
 
-## 📝 How to Verify It Worked
 
-- Run the Python script and confirm there are no errors.
-- Inspect the database: `SELECT * FROM ticketsales;`
-- Ensure dates were parsed correctly, and all rows were loaded.
-- Validate that popular event names are printed as expected.
+## 📊 Dataset
+- ticket_sales.csv (third-party reseller records)
+- Schema includes:
+  ticket_id, trans_date, event_id, event_name, event_date, event_type,
+  event_city, customer_id, price, num_tickets
 
-## 📎 Notes
 
-- You can easily swap in another CSV file by changing the filename in `load_third_party()` call at the bottom of the script.
-- A successful run log is included in `run_log.txt` per submission requirements.
 
-## 📌 Author
+## ⏱️ Run Steps
+- Connect to MySQL using get_db_connection()
+- Load CSV into sales table with load_third_party()
+- Commit and close connection
+- Query popular tickets in past month using query_popular_tickets()
+- Print results to stdout in user-friendly format
 
-Mark Holahan  
-Boot Camp: Springboard Data Engineering  
-Instructor: Akhil
+
+
+## 📈 Outputs
+- sales table populated with ticket_sales.csv records
+- Console output listing top-selling events (past month)
+
+
+
+## 📸 Evidence
+
+![mysql_schema.png](./evidence/mysql_schema.png)  
+Screenshot of MySQL schema after import
+
+![pipeline_run.png](./evidence/pipeline_run.png)  
+Screenshot of ETL pipeline executing
+
+
+
+
+## 📎 Deliverables
+
+- [`- Python ETL script`](./deliverables/- Python ETL script)
+
+- [`- requirements.txt`](./deliverables/- requirements.txt)
+
+- [`- MySQL schema definition (SQL export) in /deliverables/`](./deliverables/- MySQL schema definition (SQL export) in /deliverables/)
+
+- [`- README with setup instructions`](./deliverables/- README with setup instructions)
+
+
+
+
+## 🛠️ Architecture
+- Data pipeline architecture:
+  - Source: CSV (third-party ticket sales)
+  - Ingestion: Python (mysql-connector)
+  - Storage: MySQL sales table
+  - Analytics: SQL queries for popular events
+
+
+
+## 🔍 Monitoring
+- Manual validation via MySQL queries (SELECT TOP records)
+- Review of command-line output logs
+
+
+
+## ♻️ Cleanup
+- Drop sales table if no longer needed
+- Delete ticket_sales.csv from project folder
+- Remove Python venv (optional)
+
+
+
+*Generated automatically via Python + Jinja2 + SQL Server table `tblMiniProjectProgress` on 09-14-2025 23:37:22*
