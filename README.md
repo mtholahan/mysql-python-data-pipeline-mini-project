@@ -6,17 +6,16 @@ This project develops a basic data pipeline for an event ticketing system, integ
 
 The workflow includes:
 
-* Designing and creating a sales table in MySQL with fields for ticket, customer, event, and purchase details.
+- Designing and creating a sales table in MySQL with fields for ticket, customer, event, and purchase details.
 
-* Using Python’s MySQL connector to establish database connections and ingest new sales records from daily CSV submissions.
+- Using Python’s MySQL connector to establish database connections and ingest new sales records from daily CSV submissions.
+- Implementing a loader function to iterate through CSV rows and insert them into the database table.
+- Running SQL queries to generate statistical insights, such as identifying the most popular events in the past month based on ticket volume.
+- Formatting query results into human-readable output, e.g., "The North American International Auto Show" as a top-selling event.
 
-* Implementing a loader function to iterate through CSV rows and insert them into the database table.
+Deliverables include Python code, the sales table definition, ingestion logic, and example query results.
 
-* Running SQL queries to generate statistical insights, such as identifying the most popular events in the past month based on ticket volume.
-
-* Formatting query results into human-readable output, e.g., "The North American International Auto Show" as a top-selling event.
-
-Deliverables include Python code, the sales table definition, ingestion logic, and example query results. Through this project, I gained practice in Python-MySQL integration, database schema creation, batch CSV ingestion, and SQL-based analytics, building foundational ETL pipeline skills.
+Through this project, I gained practice in Python-MySQL integration, database schema creation, batch CSV ingestion, and SQL-based analytics, building foundational ETL pipeline skills.
 
 
 
@@ -60,26 +59,17 @@ Deliverables include Python code, the sales table definition, ingestion logic, a
 
 
 
-## 📸 Evidence
-
-![mysql_schema.png](./evidence/mysql_schema.png)  
-Screenshot of MySQL schema after import
-
-![pipeline_run.png](./evidence/pipeline_run.png)  
-Screenshot of ETL pipeline executing
-
-
 
 
 ## 📎 Deliverables
 
-- [`- Python ETL script`](./deliverables/- Python ETL script)
+- [`event_ticket_system.py`](./deliverables/event_ticket_system.py)
 
-- [`- requirements.txt`](./deliverables/- requirements.txt)
+- [`create_ticketsales_table.sql`](./deliverables/create_ticketsales_table.sql)
 
-- [`- MySQL schema definition (SQL export) in /deliverables/`](./deliverables/- MySQL schema definition (SQL export) in /deliverables/)
+- [`execution_log.txt`](./deliverables/execution_log.txt)
 
-- [`- README with setup instructions`](./deliverables/- README with setup instructions)
+- [`requirements.txt`](./deliverables/requirements.txt)
 
 
 
@@ -105,5 +95,4 @@ Screenshot of ETL pipeline executing
 - Remove Python venv (optional)
 
 
-
-*Generated automatically via Python + Jinja2 + SQL Server table `tblMiniProjectProgress` on 09-15-2025 19:27:07*
+*Generated automatically via Python + Jinja2 + SQL Server table `tblMiniProjectProgress` on 09-17-2025 17:05:57*
