@@ -1,3 +1,10 @@
+/*
+* Date 14-Jul-2025
+* Author: Mark Holahan
+* Purpose: MySQL Python Data Pipeline Mini Project
+* RDBMS: MySQL
+*/
+
 USE event_ticket_system;
 
 CREATE TABLE IF NOT EXISTS ticketsales (

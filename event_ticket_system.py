@@ -2,7 +2,7 @@ import mysql.connector
 import csv
 from datetime import datetime
 
-FILE_PATH = r"C:\Projects\Data_Pipeline_Mini_Project\third_party_sales_1.csv"
+FILE_PATH = r"C:\Projects\mysql-python-data-pipeline-mini-project\third_party_sales_1.csv"
 
 def get_db_connection():
     connection = None
@@ -89,5 +89,5 @@ if __name__ == "__main__":
         popular = query_popular_tickets(conn)
         print("May we recommend the past months' top-selling events:")
         for row in popular:
-            print(f"- {row[0]} ({row[1]} tickets sold)")
+            print(f"- {row[0]} ({row[1]} tickets sold)") # type: ignore
         conn.close
